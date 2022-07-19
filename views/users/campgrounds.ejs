@@ -1,0 +1,41 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="text-center" style="color:aliceblue;font-size:30px">
+    <h1></h1>Campgrounds by <%= currentUser.username.slice(0,1).toUpperCase()
+        + currentUser.username.slice(1) %></h1>
+</div>
+<br>
+<section class="row d-flex justify-content-center" style="background-color:#0d1117;border-style:solid;border-width: 1px;border-radius: 6px;border-color: #30363d;" >
+
+    <% for (let camp of campgrounds) { %>
+        <div class="card camp-card" style="font-size:18px;background-color:#0d1117;border-style:solid;border-width: 1px;border-radius: 6px;border-color: #30363d;">
+            <div class="row g-0">
+              <div class="col-md-6 card-img-left d-flex align-items-center bg-dark">
+                  <img class="img-fluid" alt="" src="<%= camp.images[0] ? camp.images[0].url : 'https://images.unsplash.com/photo-1468245856972-a0333f3f8293?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' %>">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title" style="color:aliceblue">
+                    Title:
+                    <a href="/campgrounds/<%= camp._id %>"><%= camp.title %></a>
+                    
+                  </h5>
+                  <p class="card-text" style="color:aliceblue">
+                    <small>
+                        Description: 
+                      <%= camp.description.substring(0, 150) %>
+                    </small>
+                  </p>     
+                  <p class="card-text" style="color:aliceblue">
+                    Location: 
+                    <%= camp.location %>
+                </p>
+                <p class="card-text" style="color:aliceblue">
+                    Price: <%= camp.price %>/Night                 
+                </div>
+              </div>
+            </div>
+        </div>
+    <% } %>
+  
+  </section>

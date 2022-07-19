@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate')%>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow" style="background-color:#0d1117;border-style:solid;border-width: 1px;border-radius: 6px;border-color: #30363d;">
+                <img src="https://images.unsplash.com/photo-1612981453053-184fd648b66b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxhbmRzY2FwZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    alt="" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title" style="color:aliceblue;text-align:center">Register</h5>
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username" style="color:aliceblue">Username</label>
+                            <input class="form-control" type="text" style="color:aliceblue;background-color:#0d1117;border-style:solid;border-width: 1px;border-radius: 6px;border-color: #30363d;" id="username" name="username" required autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email" style="color:aliceblue">Email</label>
+                            <input class="form-control" type="email" style="color:aliceblue;background-color:#0d1117;border-style:solid;border-width: 1px;border-radius: 6px;border-color: #30363d;"id="email" name="email" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password" style="color:aliceblue">Password</label>
+                            <input class="form-control" type="password" style="color:aliceblue;background-color:#0d1117;border-style:solid;border-width: 1px;border-radius: 6px;border-color: #30363d;" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-block">Register</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

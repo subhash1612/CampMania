@@ -1,0 +1,31 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">CampMania</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/campgrounds">Campgrounds</a>
+              <a class="nav-link" href="/campgrounds/new">Add Campground</a>
+              <a class="nav-link" href="/myCampgrounds">My Campgrounds</a>
+          </div>
+          <div class="navbar-nav d-flex flex-column align-items-center align-items-sm-end flex-lg-row flex-lg-fill">
+            <cd doform action="/campgrounds/search" method="GET" class="d-flex my-3 my-lg-0 flex-grow-1 mx-lg-5">
+              <input name="q" id="search" type="search" placeholder="Search Campgrounds" aria-label="Search" 
+                class="form-control w-100 me-2 bg-dark text-white btn-outline-secondary">
+              <button class="btn btn-outline-secondary" type="submit" aria-label="search"><i class="fa fa-search"></i></button>
+            </form>
+          <div class="navbar-nav ml-auto">
+              <% if(!currentUser) {%>
+              <a class="nav-link" href="/login">Login</a>
+              <a class="nav-link" href="/register">Register</a>
+              <% } else {%>
+              <a class="nav-link" href="/logout">Logout</a>
+              <% } %>
+          </div>
+      </div>
+  </div>
+</nav>
